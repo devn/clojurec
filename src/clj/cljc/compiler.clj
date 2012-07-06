@@ -1808,15 +1808,15 @@
   [^java.io.File f]
   (.mkdirs (.getParentFile (.getCanonicalFile f))))
 
-(defmacro with-core-cljs
-  "Ensure that core.cljs has been loaded."
+(defmacro with-core-cljc
+  "Ensure that core.cljc has been loaded."
   [& body]
-  `(do ;(when-not (:defs (get @namespaces 'cljc.core))
-         ;(analyze-file "cljs/core.cljs"))
+  `(do (when-not (:defs (get @namespaces 'cljc.core))
+	 (analyze-file "cljc/core.cljc"))
        ~@body))
 
 (defn compile-file* [src dest]
-  (with-core-cljs
+  (with-core-cljc
     (with-open [out ^java.io.Writer (io/make-writer dest {})]
       (binding [*out* out
                 *cljs-ns* 'cljs.user

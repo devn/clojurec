@@ -1,2 +1,6 @@
 * Compiler
 ** TODO Use the namespaces atom for protocols, too
+* Runtime
+** TODO Strings
+*** ICU
+http://site.icu-project.org/

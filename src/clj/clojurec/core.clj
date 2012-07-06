@@ -58,7 +58,15 @@
     (inspect-ast (last asts))
     (run-code (compile-asts asts))))
 
+;;(use 'cljs.compiler)
+;;(cljc.compiler/macroexpand-1 {} '(defprotocol foo (-bar [x y])))
+;;(cljc.compiler/resolve-var {:ns {:name 'cljc.test}} 'y)
+;;(inspect-expr '(deftype* beidel [a b]))
+;;(compile-expr '(do (print 1) (print 2)))
+;;(compile-expr '(. a -b))
 ;;(inspect-and-run-expr '(print 1))
+;;(inspect-expr '(defprotocol* ISeqable (-seq [o])))
+;;(run-expr 'cljc.core true '(cljc.core/print 123))
 
 (defn -main
   "I don't do a whole lot."
